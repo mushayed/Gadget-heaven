@@ -55,7 +55,7 @@ const ExploreGadgets = () => {
                     <NavLink
                         to="/power-banks"
                         className={({ isActive }) =>
-                            isActive ? "btn btn-active rounded-full bg-blue-500 text-white" : "btn btn-active rounded-full"
+                            isActive ? "btn btn-active rounded-full bg-[#9538E2] text-white" : "btn btn-active rounded-full"
                         }
                     >
                         Power Banks

@@ -22,6 +22,7 @@ const Navbar = () => {
         <NavLink to='/'>Home</NavLink>
         <NavLink to='/statistics'>Statistics</NavLink>
         <NavLink to='/dashboard'>Dashboard</NavLink>
+        <NavLink to='/faqs'>FAQs</NavLink>
       </div>
 
       <div className="hidden md:flex gap-4">
@@ -50,6 +51,7 @@ const Navbar = () => {
           <NavLink to='/' className="py-2">Home</NavLink>
           <NavLink to='/statistics' className="py-2">Statistics</NavLink>
           <NavLink to='/dashboard' className="py-2">Dashboard</NavLink>
+          <NavLink to='/faqs' className="py-2">FAQs</NavLink>
           <div className="flex gap-4 mt-4">
             <div className="indicator">
               <span className="indicator-item badge badge-secondary">0</span>

@@ -1,0 +1,205 @@
+[
+    {
+      "product_id": "C001",
+      "product_title": "Dell XPS 13",
+      "product_image": "https://i.ibb.co.com/Gc1K8rz/Laptop1.jpg",
+      "category": "Computers",
+      "price": 999,
+      "description": "A high-performance laptop with a sleek design and impressive display.",
+      "specification": [
+        "13.4-inch InfinityEdge display",
+        "Intel Core i7 11th Gen",
+        "16GB RAM",
+        "512GB SSD",
+        "Intel Iris Xe Graphics"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "C002",
+      "product_title": "MacBook Pro 16-inch",
+      "product_image": "https://i.ibb.co.com/9qvnJpD/Macbook1.jpg",
+      "category": "Computers",
+      "price": 2499,
+      "description": "Powerful laptop with M2 chip for top-notch performance.",
+      "specification": [
+        "16-inch Liquid Retina XDR display",
+        "Apple M2 Pro chip",
+        "32GB RAM",
+        "1TB SSD",
+        "Up to 21 hours of battery life"
+      ],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "C003",
+      "product_title": "HP Spectre x360",
+      "product_image": "https://i.ibb.co.com/mh5dRd7/Laptop2.webp",
+      "category": "Computers",
+      "price": 1199,
+      "description": "2-in-1 laptop with a convertible design and vibrant touch display.",
+      "specification": [
+        "13.5-inch OLED touch display",
+        "Intel Core i7 12th Gen",
+        "16GB RAM",
+        "1TB SSD",
+        "Bang & Olufsen speakers"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "C004",
+      "product_title": "Asus ROG Strix G15",
+      "product_image": "https://i.ibb.co.com/S32JXbj/Laptop3.webp",
+      "category": "Computers",
+      "price": 1499,
+      "description": "Gaming laptop with powerful performance and RGB lighting.",
+      "specification": [
+        "15.6-inch FHD display with 300Hz refresh rate",
+        "AMD Ryzen 9 5900HX",
+        "32GB RAM",
+        "1TB SSD",
+        "NVIDIA GeForce RTX 3080"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "C005",
+      "product_title": "Lenovo ThinkPad X1 Carbon",
+      "product_image": "https://i.ibb.co.com/LdjV9gR/Laptop4.webp",
+      "category": "Computers",
+      "price": 1399,
+      "description": "A business laptop with durability and superior performance.",
+      "specification": [
+        "14-inch FHD display",
+        "Intel Core i7 11th Gen",
+        "16GB RAM",
+        "1TB SSD",
+        "Fingerprint reader"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "C006",
+      "product_title": "Acer Swift 3",
+      "product_image": "https://i.ibb.co.com/cQbKw5x/Laptop5.jpg",
+      "category": "Computers",
+      "price": 749,
+      "description": "Budget-friendly laptop with strong performance.",
+      "specification": [
+        "14-inch Full HD display",
+        "AMD Ryzen 7 5700U",
+        "8GB RAM",
+        "512GB SSD",
+        "Backlit keyboard"
+      ],
+      "availability": true,
+      "rating": 4.3
+    },
+    {
+      "product_id": "P001",
+      "product_title": "Apple iPhone 15 Pro Max",
+      "product_image": "https://i.ibb.co.com/7SnGynY/iPhone.jpg",
+      "category": "Phones",
+      "price": 1299,
+      "description": "Experience the ultimate smartphone with the iPhone 15 Pro Max.",
+      "specification": [
+        "6.7-inch Super Retina XDR display",
+        "A17 Bionic chip",
+        "Triple-camera system (48MP Main, 12MP Telephoto, 12MP Ultrawide)",
+        "LiDAR Scanner",
+        "Up to 2TB storage"
+      ],
+      "availability": true,
+      "rating": 4.8
+    },
+    {
+      "product_id": "P002",
+      "product_title": "Samsung Galaxy S23 Ultra",
+      "product_image": "https://i.ibb.co.com/2tsZzG5/Samsung.jpg",
+      "category": "Phones",
+      "price": 1199,
+      "description": "Top-tier Android smartphone with superior camera and performance.",
+      "specification": [
+        "6.8-inch Dynamic AMOLED 2X display",
+        "Snapdragon 8 Gen 2",
+        "Quad-camera setup (200MP Main)",
+        "S Pen support",
+        "1TB storage"
+      ],
+      "availability": true,
+      "rating": 4.7
+    },
+    {
+      "product_id": "SW001",
+      "product_title": "Apple Watch Series 9",
+      "product_image": "https://i.ibb.co.com/rwK5GCH/Watch1.jpg",
+      "category": "Smart Watches",
+      "price": 399,
+      "description": "Stay connected and track your fitness with Apple Watch Series 9.",
+      "specification": [
+        "Always-On Retina display",
+        "Blood Oxygen sensor",
+        "ECG app",
+        "Up to 18 hours of battery life",
+        "Water-resistant up to 50 meters"
+      ],
+      "availability": true,
+      "rating": 4.6
+    },
+    {
+      "product_id": "SW002",
+      "product_title": "Samsung Galaxy Watch 6",
+      "product_image": "https://i.ibb.co.com/Vt6zdWr/Watch2.jpg",
+      "category": "Smart Watches",
+      "price": 349,
+      "description": "A sleek smartwatch with comprehensive fitness tracking features.",
+      "specification": [
+        "Super AMOLED display",
+        "Advanced sleep tracking",
+        "Heart rate monitor",
+        "Up to 40 hours of battery life",
+        "Water-resistant"
+      ],
+      "availability": true,
+      "rating": 4.5
+    },
+    {
+      "product_id": "CH001",
+      "product_title": "Anker PowerPort III Nano",
+      "product_image": "https://i.ibb.co.com/ystZw2Z/Charger1.jpg",
+      "category": "Chargers",
+      "price": 20,
+      "description": "Compact fast charger for your smartphones and tablets.",
+      "specification": [
+        "20W USB-C charging",
+        "Ultra-compact design",
+        "Supports Power Delivery",
+        "Compatible with most devices"
+      ],
+      "availability": true,
+      "rating": 4.9
+    },
+    {
+      "product_id": "CH002",
+      "product_title": "Belkin BoostCharge Pro 3-in-1",
+      "product_image": "https://i.ibb.co.com/YD0n4DJ/Charger2.jpg",
+      "category": "Chargers",
+      "price": 129,
+      "description": "Wireless charging stand for iPhone, Apple Watch, and AirPods.",
+      "specification": [
+        "15W fast wireless charging",
+        "Supports MagSafe",
+        "Charges 3 devices simultaneously",
+        "LED indicator"
+      ],
+      "availability": true,
+      "rating": 4.7
+    }
+]
+  

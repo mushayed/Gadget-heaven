@@ -26,7 +26,7 @@ const ProductDetails = () => {
   const [wishlistDisabled, setWishlistDisabled] = useState(false);
 
   useEffect(() => {
-    const storedWishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+    const storedWishlist = JSON.parse(sessionStorage.getItem("wishlist") || "[]");
     if (storedWishlist.includes(productId)) {
       setWishlistDisabled(true);
     }
@@ -41,7 +41,7 @@ const ProductDetails = () => {
     setWishlist(updatedWishlist);
     setWishlistDisabled(true);
 
-    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    sessionStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
   };
 
   return (

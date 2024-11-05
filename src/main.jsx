@@ -18,6 +18,7 @@ import SmartWatches from './Components/SmartWatches/SmartWatches.jsx';
 import Chargers from './Components/Chargers/Chargers.jsx';
 import PowerBanks from './Components/PowerBanks/PowerBanks.jsx';
 import Faqs from './Components/Faqs/Faqs.jsx';
+import ProductDetails from './Components/ProductDetails/ProductDetails.jsx';
 
 
 
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
       {
         path: "/faqs",
         element: <Faqs></Faqs>,
+      },
+      {
+        path: "/product/:productId", 
+        element: <ProductDetails></ProductDetails>,
       },
     ],
   },

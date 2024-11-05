@@ -1,8 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 const Product = ({ product }) => {
-  const { product_image, product_title, price } = product;
+  const {product_id, product_image, product_title, price } = product;
+
+  const navigate = useNavigate();
+
+  const handleViewDetails = () => {
+    navigate(`/product/${product_id}`)
+  }
 
   return (
-    <div className="bg-white rounded-2xl p-5 gap-y-6">
+    <div onClick={handleViewDetails} className="bg-white rounded-2xl p-5 gap-y-6">
       <div className="w-[16rem] h-[10rem]">
         <img
           className="w-full h-full object-cover rounded-2xl"

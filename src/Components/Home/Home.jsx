@@ -1,7 +1,14 @@
+import { useNavigate } from 'react-router-dom';
 import banner from '../../assets/banner.jpg'
 import ExploreGadgets from '../ExploreGadgets/ExploreGadgets';
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    navigate('/dashboard')
+  }
+
   return (
     <div>
       <div className="flex flex-col gap-6 items-center w-[96%] mx-auto pt-14 pb-64 text-slate-100 bg-[#9538E2] relative rounded-b-2xl">
@@ -12,7 +19,7 @@ const Home = () => {
           Explore the latest gadgets that will take your experience to the next
           level. From smart devices to the coolest accessories, we have it all!
         </p>
-        <button class="btn rounded-full text-[#9538E2] font-bold">
+        <button onClick={handleOnClick} class="btn rounded-full text-[#9538E2] font-bold">
           Shop now
         </button>
       </div>

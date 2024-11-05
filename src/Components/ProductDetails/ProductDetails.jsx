@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ProductsContext } from "../Root/Root";
 import ReactStars from "react-rating-stars-component";
@@ -8,7 +8,8 @@ import { FaRegHeart } from "react-icons/fa";
 const ProductDetails = () => {
   const { productId } = useParams();
 
-  const products = useContext(ProductsContext);
+  const { products, cart, setCart, wishlist, setWishlist } =
+    useContext(ProductsContext);
 
   const product = products.find((product) => product.product_id === productId);
 
@@ -21,6 +22,27 @@ const ProductDetails = () => {
     rating,
     availability,
   } = product;
+
+  const [wishlistDisabled, setWishlistDisabled] = useState(false);
+
+  useEffect(() => {
+    const storedWishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+    if (storedWishlist.includes(productId)) {
+      setWishlistDisabled(true);
+    }
+  }, [productId]);
+
+  const addToCart = () => {
+    setCart([...cart, productId]);
+  };
+
+  const addToWishlist = () => {
+    const updatedWishlist = [...wishlist, productId];
+    setWishlist(updatedWishlist);
+    setWishlistDisabled(true);
+
+    localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+  };
 
   return (
     <div className="pb-[38rem] md:pb-[25rem]">
@@ -67,11 +89,18 @@ const ProductDetails = () => {
             </button>
           </div>
           <div className="flex gap-4">
-            <button class="btn text-white bg-[#9538E2] rounded-full">
+            <button
+              onClick={addToCart}
+              class="btn text-white bg-[#9538E2] rounded-full"
+            >
               Add To Card
               <BsCart3 />
             </button>
-            <button class="btn rounded-full">
+            <button
+              disabled={wishlistDisabled}
+              onClick={addToWishlist}
+              class="btn rounded-full text-[#9538E2]"
+            >
               <FaRegHeart />
             </button>
           </div>

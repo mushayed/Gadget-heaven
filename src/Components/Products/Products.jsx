@@ -3,7 +3,7 @@ import { ProductsContext } from "../Root/Root";
 import Product from "../Product/Product";
 
 const Products = () => {
-  const products = useContext(ProductsContext);
+  const {products} = useContext(ProductsContext);
 
   if(!products.length) {
     return (

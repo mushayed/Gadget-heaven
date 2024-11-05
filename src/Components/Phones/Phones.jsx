@@ -3,7 +3,7 @@ import { ProductsContext } from "../Root/Root";
 import Product from "../Product/Product";
 
 const Phones = () => {
-  const products = useContext(ProductsContext);
+  const {products} = useContext(ProductsContext);
 
   const phonesProducts = products.filter(
     (product) => product.category === "Phones"

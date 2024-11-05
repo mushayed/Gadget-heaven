@@ -7,6 +7,8 @@ export const ProductsContext = createContext();
 
 const Root = () => {
   const [products, setProducts] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [wishlist, setWishlist] = useState([]);
 
   useEffect(() => {
     fetch("../../../public/products.json")
@@ -15,7 +17,7 @@ const Root = () => {
   }, []);
 
   return (
-    <ProductsContext.Provider value={products}>
+    <ProductsContext.Provider value={{ products, cart, setCart, wishlist, setWishlist }}>
       <div>
         <Navbar></Navbar>
         <Outlet></Outlet>

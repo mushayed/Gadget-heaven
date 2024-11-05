@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi"; 
 import { IoMdClose } from "react-icons/io"; 
+import { ProductsContext } from "../Root/Root";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); 
@@ -11,6 +12,8 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  const {cart, wishlist} = useContext(ProductsContext);
 
   return (
     <nav className="border-2 flex items-center justify-between w-[96%] mx-auto mt-5 rounded-t-2xl px-2 md:px-5 lg:px-20 py-3 relative">
@@ -27,13 +30,13 @@ const Navbar = () => {
 
       <div className="hidden md:flex gap-4">
         <div className="indicator">
-          <span className="indicator-item badge badge-secondary">0</span>
+          <span className="indicator-item badge badge-secondary">{cart.length}</span>
           <div className="bg-base-300 grid h-10 w-10 rounded-full place-items-center">
             <BsCart3 />
           </div>
         </div>
         <div className="indicator">
-          <span className="indicator-item badge badge-secondary">0</span>
+          <span className="indicator-item badge badge-secondary">{wishlist.length}</span>
           <div className="bg-base-300 grid h-10 w-10 rounded-full place-items-center">
             <FaRegHeart />
           </div>
@@ -54,13 +57,13 @@ const Navbar = () => {
           <NavLink to='/faqs' className="py-2">FAQs</NavLink>
           <div className="flex gap-4 mt-4">
             <div className="indicator">
-              <span className="indicator-item badge badge-secondary">0</span>
+              <span className="indicator-item badge badge-secondary">{cart.length}</span>
               <div className="bg-base-300 grid h-10 w-10 rounded-full place-items-center">
                 <BsCart3 />
               </div>
             </div>
             <div className="indicator">
-              <span className="indicator-item badge badge-secondary">0</span>
+              <span className="indicator-item badge badge-secondary">{wishlist.length}</span>
               <div className="bg-base-300 grid h-10 w-10 rounded-full place-items-center">
                 <FaRegHeart />
               </div>

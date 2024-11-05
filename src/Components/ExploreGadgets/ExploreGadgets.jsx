@@ -5,7 +5,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import Products from "../Products/Products";
 
 const ExploreGadgets = () => {
-    const products = useContext(ProductsContext);
+    const {products} = useContext(ProductsContext);
 
     return (
         <div className="w-[90%] mx-auto mt-28 md:mt-32 lg:mt-80 flex flex-col gap-12 items-center py-16 bg-slate-50">

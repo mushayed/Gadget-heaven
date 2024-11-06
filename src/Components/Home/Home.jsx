@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import banner from '../../assets/banner.jpg'
 import ExploreGadgets from '../ExploreGadgets/ExploreGadgets';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -11,6 +12,9 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Gadget | Gadget Heaven</title>
+      </Helmet>
       <div className="flex flex-col gap-6 items-center w-[96%] mx-auto pt-14 pb-64 text-slate-100 bg-[#9538E2] relative rounded-b-2xl">
         <h1 className="font-bold text-5xl text-center">
           Upgrade Your Tech Accessorize with Gadget Heaven Accessories

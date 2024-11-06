@@ -1,12 +1,16 @@
 import { useState } from "react"; 
 import CartContainer from "../CartContainer/CartContainer";
 import WishlistContainer from "../WishlistContainer/WishlistContainer";
+import { Helmet } from "react-helmet-async";
 
 const Dashboard = () => {
   const [activeButton, setActiveButton] = useState("cart"); 
 
   return (
     <div>
+      <Helmet>
+        <title>Dashboard | Gadget Heaven</title>
+      </Helmet>
       <div className="flex flex-col items-center gap-4 p-8 bg-[#9538E2] text-white">
         <h3 className="font-bold text-3xl text-center">Dashboard</h3>
         <p className="text-base font-normal text-center">

@@ -6,6 +6,7 @@ import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
 
 const ProductDetails = () => {
   const { productId } = useParams();
@@ -82,6 +83,9 @@ const ProductDetails = () => {
 
   return (
     <div className="pb-[38rem] md:pb-[25rem]">
+      <Helmet>
+        <title>{product_title} | Gadget Heaven</title>
+      </Helmet>
       <div className="relative flex flex-col items-center gap-4 p-8 bg-[#9538E2] text-white">
         <h3 className="font-bold text-3xl text-center">Product Details</h3>
         <p className="text-base font-normal text-center pb-[14rem]">

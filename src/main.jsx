@@ -19,6 +19,7 @@ import Chargers from './Components/Chargers/Chargers.jsx';
 import PowerBanks from './Components/PowerBanks/PowerBanks.jsx';
 import Faqs from './Components/Faqs/Faqs.jsx';
 import ProductDetails from './Components/ProductDetails/ProductDetails.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 
@@ -81,6 +82,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </StrictMode>,
 )

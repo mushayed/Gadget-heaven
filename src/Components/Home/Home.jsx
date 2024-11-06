@@ -23,8 +23,8 @@ const Home = () => {
           Shop now
         </button>
       </div>
-      <div className="w-[80%] h-[19rem] lg:w-[63rem] lg:h-[33rem] md:h-[22rem] border-2 border-slate-100 rounded-2xl absolute lg:top-96 lg:left-[13%] md:top-[25rem] 
-      md:left-[11%] top-[36rem] left-[10%]">
+      <div className="w-[80%] h-[19rem] lg:w-[63rem] lg:h-[33rem] md:h-[22rem] border-2 border-slate-100 rounded-2xl absolute lg:top-96 lg:left-[13%] md:top-[29rem] 
+      md:left-[11%] top-[42rem] left-[10%]">
         <img className='w-full h-full object-cover rounded-2xl' src={banner} alt="" />
       </div>
 

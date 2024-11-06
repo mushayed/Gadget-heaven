@@ -1,8 +1,29 @@
-# React + Vite
+## Live Website Link
+https://gadget-heaven-mushayed.netlify.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Requirement Document Link
 
-Currently, two official plugins are available:
+https://github.com/ProgrammingHero1/B10-A8-gadget-heaven/blob/main/Batch-10_Assignment-08.pdf
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## List of React Fundamental concepts used in the project
+
+1. React Router
+2. Nested Route
+3. Dynamic Route 
+4. Different types of hooks
+5. Navlink
+
+## Data Handling
+
+The project uses:
+
+Context API: To manage global state, including data for cart, wishlist, and totalPrice, allowing various components to access and update this data seamlessly.
+
+
+## Features
+
+1. **Add to Wishlist**: Allows users to add products to a wishlist, which can later be transferred to the cart.
+2. **Sort by Price**: Users can sort cart items by price, enabling them to prioritize based on cost.
+3. **Purchase Modal**: A purchase confirmation modal displays upon completing a successful purchases.
+4. **Total Price Calculation**: The app dynamically calculates and displays the total cost of items in the cart.
+5. **Responsive Design**: Designed to be responsive, offering an optimized experience across various screen sizes.

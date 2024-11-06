@@ -1,14 +1,19 @@
 import { SlEqualizer } from "react-icons/sl";
 import Carts from "../Carts/Carts";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { ProductsContext } from "../Root/Root";
 import group from "../../assets/Group.png";
+import { useNavigate } from "react-router-dom";
 
 const CartContainer = () => {
   const { products, cart, setCart, totalPrice, setTotalPrice, purchaseActive, setPurchaseActive } = useContext(ProductsContext);
 
+  const [purchasePrice, setPurchasePrice] = useState(0);
+
   if(totalPrice > 0) {
     setPurchaseActive(false);
+  } else {
+    setPurchaseActive(true);
   }
 
   const sortByPrice = () => {
@@ -21,6 +26,24 @@ const CartContainer = () => {
       .map((item) => item.cartId);
 
     setCart(sortedCart);
+  };
+
+  const resetPage = () => {
+    setTotalPrice(0);
+    setCart([]);
+    setPurchaseActive(true);
+  }
+
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    navigate('/')
+  }
+
+  const handlePurchase = () => {
+    setPurchasePrice(totalPrice);
+    document.getElementById("my_modal").showModal();
+    resetPage(); 
   };
 
   return (
@@ -40,7 +63,7 @@ const CartContainer = () => {
               <SlEqualizer />
             </button>
             <button
-              onClick={() => document.getElementById("my_modal").showModal()}
+              onClick={handlePurchase}
               className={"text-lg font-semibold btn rounded-full px-8 bg-[#9538E2] text-white"}
               disabled={purchaseActive}
             >
@@ -56,10 +79,10 @@ const CartContainer = () => {
                 </div>
                 <h3 className="font-bold text-lg">Payment Successfully</h3>
                 <p className="py-4">Thanks for purchasing</p>
-                <p>Total: {totalPrice}</p>
+                <p>Total: {purchasePrice}</p>
                 <div className="modal-action">
                   <form method="dialog">
-                    <button className="btn rounded-full px-24">Close</button>
+                    <button onClick={handleOnClick} className="btn rounded-full px-24">Close</button>
                   </form>
                 </div>
               </div>

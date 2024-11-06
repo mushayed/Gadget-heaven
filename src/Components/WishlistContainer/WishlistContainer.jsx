@@ -35,7 +35,7 @@ const WishlistContainer = () => {
       </div>
       <div>
         {
-          wishlist.length > 0 ? <Wishlists></Wishlists> : <div className="h-36 flex items-center justify-center"><h2 className="text-4xl font-bold text-[#9538E2]">Your wishlist is empty</h2></div>
+          wishlist.length > 0 ? <Wishlists></Wishlists> : <div className="h-36 flex items-center justify-center"><h2 className="text-4xl font-bold text-[#9538E2] text-center">Your wishlist is empty</h2></div>
         }
       </div>
       <ToastContainer></ToastContainer>

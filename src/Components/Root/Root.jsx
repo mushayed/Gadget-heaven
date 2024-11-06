@@ -14,7 +14,7 @@ const Root = () => {
   const [purchaseActive, setPurchaseActive] = useState(true);
 
   useEffect(() => {
-    fetch("../../../public/products.json")
+    fetch("/products.json")
       .then((response) => response.json())
       .then((json) => setProducts(json));
   }, []);

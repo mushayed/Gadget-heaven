@@ -4,12 +4,21 @@ import { ProductsContext } from "../Root/Root";
 import ReactStars from "react-rating-stars-component";
 import { BsCart3 } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetails = () => {
   const { productId } = useParams();
 
-  const { products, cart, setCart, wishlist, setWishlist, totalPrice, setTotalPrice } =
-    useContext(ProductsContext);
+  const {
+    products,
+    cart,
+    setCart,
+    wishlist,
+    setWishlist,
+    totalPrice,
+    setTotalPrice,
+  } = useContext(ProductsContext);
 
   const product = products.find((product) => product.product_id === productId);
 
@@ -26,7 +35,9 @@ const ProductDetails = () => {
   const [wishlistDisabled, setWishlistDisabled] = useState(false);
 
   useEffect(() => {
-    const storedWishlist = JSON.parse(sessionStorage.getItem("wishlist") || "[]");
+    const storedWishlist = JSON.parse(
+      sessionStorage.getItem("wishlist") || "[]"
+    );
     if (storedWishlist.includes(productId)) {
       setWishlistDisabled(true);
     }
@@ -34,7 +45,19 @@ const ProductDetails = () => {
 
   const addToCart = () => {
     setCart([...cart, productId]);
-    setTotalPrice(totalPrice + price)
+    setTotalPrice(totalPrice + price);
+
+    toast.success(`${product_title} added into your cart!`, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   const addToWishlist = () => {
@@ -43,6 +66,18 @@ const ProductDetails = () => {
     setWishlistDisabled(true);
 
     sessionStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+
+    toast.success(`${product_title} added into your wishlist!`, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      transition: Bounce,
+    });
   };
 
   return (
@@ -107,6 +142,7 @@ const ProductDetails = () => {
           </div>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

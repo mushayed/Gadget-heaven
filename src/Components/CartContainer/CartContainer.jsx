@@ -95,7 +95,7 @@ const CartContainer = () => {
           <Carts></Carts>
         ) : (
           <div className="h-36 flex items-center justify-center">
-            <h2 className="text-4xl font-bold text-[#9538E2]">
+            <h2 className="text-center text-4xl font-bold text-[#9538E2]">
               Your cart is empty
             </h2>
           </div>

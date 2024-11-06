@@ -10,6 +10,8 @@ const Root = () => {
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
+  const [addedToCart, setAddedToCart] = useState(false);
+  const [purchaseActive, setPurchaseActive] = useState(true);
 
   useEffect(() => {
     fetch("../../../public/products.json")
@@ -18,7 +20,21 @@ const Root = () => {
   }, []);
 
   return (
-    <ProductsContext.Provider value={{ products, cart, setCart, wishlist, setWishlist, totalPrice, setTotalPrice }}>
+    <ProductsContext.Provider
+      value={{
+        products,
+        cart,
+        setCart,
+        wishlist,
+        setWishlist,
+        totalPrice,
+        setTotalPrice,
+        addedToCart,
+        setAddedToCart,
+        purchaseActive,
+        setPurchaseActive
+      }}
+    >
       <div>
         <Navbar></Navbar>
         <Outlet></Outlet>

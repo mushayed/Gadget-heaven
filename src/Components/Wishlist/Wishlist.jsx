@@ -1,35 +1,21 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { TiDeleteOutline } from "react-icons/ti";
 import { ProductsContext } from "../Root/Root";
-import { ToastContainer, toast, Bounce } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Wishlist = ({ product }) => {
   const { product_id, product_image, product_title, description, price } =
     product;
 
-  const { cart, setCart, totalPrice, setTotalPrice, setWishlist, wishlist } =
+  const { cart, setCart, totalPrice, setTotalPrice, setWishlist, wishlist, setAddedToCart } =
     useContext(ProductsContext);
 
   const addToCart = () => {
     setCart([...cart, product_id]);
     setTotalPrice(totalPrice + price);
 
-    toast.success(`${product_title} added into your cart!`, {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
-      transition: Bounce,
-    });
-
-
     const updatedWishlist = wishlist.filter(id => id !== product_id);
     setWishlist(updatedWishlist);
+    setAddedToCart(true);
   };
 
   const removeWishlist = () => {
@@ -62,7 +48,6 @@ const Wishlist = ({ product }) => {
           Add to Cart
         </button>
       </div>
-      <ToastContainer></ToastContainer>
     </div>
   );
 };

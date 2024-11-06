@@ -1,10 +1,29 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { SlEqualizer } from "react-icons/sl";
 import { ProductsContext } from "../Root/Root";
 import Wishlists from "../Wishlists/Wishlists";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const WishlistContainer = () => {
-  const {wishlist} = useContext(ProductsContext);
+  const {wishlist, addedToCart, setAddedToCart} = useContext(ProductsContext);
+
+  useEffect(() => {
+    if (addedToCart) {
+      toast.success(`Item added into your cart!`, {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+        transition: Bounce,
+      });
+      setAddedToCart(false);  
+    }
+  }, [addedToCart, setAddedToCart]);
 
   return (
     <div className="w-[90%] mx-auto">
@@ -19,6 +38,7 @@ const WishlistContainer = () => {
           wishlist.length > 0 ? <Wishlists></Wishlists> : <div className="h-36 flex items-center justify-center"><h2 className="text-4xl font-bold text-[#9538E2]">Your wishlist is empty</h2></div>
         }
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

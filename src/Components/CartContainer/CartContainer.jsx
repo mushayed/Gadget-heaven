@@ -2,17 +2,23 @@ import { SlEqualizer } from "react-icons/sl";
 import Carts from "../Carts/Carts";
 import { useContext } from "react";
 import { ProductsContext } from "../Root/Root";
+import group from "../../assets/Group.png";
 
 const CartContainer = () => {
-  const { products, cart, setCart, totalPrice, setTotalPrice } =
-    useContext(ProductsContext);
+  const { products, cart, setCart, totalPrice, setTotalPrice, purchaseActive, setPurchaseActive } = useContext(ProductsContext);
+
+  if(totalPrice > 0) {
+    setPurchaseActive(false);
+  }
 
   const sortByPrice = () => {
     const sortedCart = cart
       .map((cartId) => {
         const product = products.find((p) => p.product_id === cartId);
         return { cartId, price: product ? product.price : 0 };
-      }).sort((a, b) => b.price - a.price) .map((item) => item.cartId); 
+      })
+      .sort((a, b) => b.price - a.price)
+      .map((item) => item.cartId);
 
     setCart(sortedCart);
   };
@@ -33,10 +39,32 @@ const CartContainer = () => {
               Sort by Price
               <SlEqualizer />
             </button>
-            <button className="text-lg font-semibold btn rounded-full px-8 bg-[#9538E2] text-white">
+            <button
+              onClick={() => document.getElementById("my_modal").showModal()}
+              className={"text-lg font-semibold btn rounded-full px-8 bg-[#9538E2] text-white"}
+              disabled={purchaseActive}
+            >
               Purchase
             </button>
           </div>
+
+          <dialog id="my_modal" className="modal">
+            <div className="modal-box">
+              <div className="flex flex-col items-center">
+                <div>
+                  <img src={group} alt="" />
+                </div>
+                <h3 className="font-bold text-lg">Payment Successfully</h3>
+                <p className="py-4">Thanks for purchasing</p>
+                <p>Total: {totalPrice}</p>
+                <div className="modal-action">
+                  <form method="dialog">
+                    <button className="btn rounded-full px-24">Close</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </dialog>
         </div>
       </div>
       <div>

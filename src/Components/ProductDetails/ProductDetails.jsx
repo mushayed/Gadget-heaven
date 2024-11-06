@@ -8,7 +8,7 @@ import { FaRegHeart } from "react-icons/fa";
 const ProductDetails = () => {
   const { productId } = useParams();
 
-  const { products, cart, setCart, wishlist, setWishlist } =
+  const { products, cart, setCart, wishlist, setWishlist, totalPrice, setTotalPrice } =
     useContext(ProductsContext);
 
   const product = products.find((product) => product.product_id === productId);
@@ -34,6 +34,7 @@ const ProductDetails = () => {
 
   const addToCart = () => {
     setCart([...cart, productId]);
+    setTotalPrice(totalPrice + price)
   };
 
   const addToWishlist = () => {
@@ -91,7 +92,7 @@ const ProductDetails = () => {
           <div className="flex gap-4">
             <button
               onClick={addToCart}
-              class="btn text-white bg-[#9538E2] rounded-full"
+              className="btn text-white bg-[#9538E2] rounded-full"
             >
               Add To Card
               <BsCart3 />
@@ -99,7 +100,7 @@ const ProductDetails = () => {
             <button
               disabled={wishlistDisabled}
               onClick={addToWishlist}
-              class="btn rounded-full text-[#9538E2]"
+              className="btn rounded-full text-[#9538E2]"
             >
               <FaRegHeart />
             </button>
